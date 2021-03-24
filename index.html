@@ -1,9 +1,82 @@
-<html>
-<title>ex1</title>
-<body>
-<h1>heading</h1>
-<table>
-<tr>1</tr>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+    <title>ex1</title>
+    <head>
+        <link rel="stylesheet" href="ex.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+    <!-- <div class="container">
+        <div class="row">
+            <div class="box">
+                <img src="img/kamban.png" alt="">
+            </div>
+        </div>
+    </div> -->
+    <div id="container">
+        <div id="box"></div>
+      </div>
+      
+      <br />
+      <button class="up" onclick="up()">↑</button>
+      
+      <br />
+      
+      <button class="right" onclick="left()">←</button>
+      
+      <button class="left" onclick="right()">→</button>
+      
+      <br />
+      
+      <button class="down" onclick="down()">↓</button>
+    
+    <script src="ex.js"></script>
 </body>
-<html>
+</html>
+#container {
+    position: relative;
+    background: purple;
+    width: 400 px;
+    height: 400 px;
+}
+#box {
+    position: absolute;
+    background: red;
+    width: 30px;
+    height: 30px;
+    bottom: 0px;
+  }
+
+
+var box = document.getElementById("box");
+var container = document.getElementById("container");
+var time = document.getElementById("time");
+let up2 = 1;
+let right2 = 1;
+let left2 = 1;
+let down2 = 1;
+
+function up() {
+    box.style.height = 30 + "px";
+    box.style.bottom = 30 * up2 + "px";
+    up2++;
+}
+
+function right() {
+    box.style.right = 30 + "px";
+    box.style.left = 30 * right2 + "px";
+    right2++;
+}
+
+function left() {
+    box.style.left = 30 + "px";
+    box.style.right = 30 * left2 + "px";
+    left2++;
+}
+
+function down() {
+    box.style.bottom = 30 + "px";
+    box.style.top = 30 * down2 + "px";
+    down2++;
+}
